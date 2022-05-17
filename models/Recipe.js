@@ -21,32 +21,32 @@ const RecipeSchema = new Schema({
         "uri": { type: String },
         "label": { type: String, required: [true, "Every recipe must have a title"] },
         "image": { type: String, required: [true, "Every recipe must have an image"] },
-        "images": {
-            "THUMBNAIL": {
-                "url": { type: String },
-                "width": { type: Number, default: 0 },
-                "height": { type: Number, default: 0 }
-            },
-            "SMALL": {
-                "url": { type: String },
-                "width": { type: Number, default: 0 },
-                "height": { type: Number, default: 0 }
-            },
-            "REGULAR": {
-                "url": { type: String },
-                "width": { type: Number, default: 0 },
-                "height": { type: Number, default: 0 }
-            },
-            "LARGE": {
-                "url": { type: String },
-                "width": { type: Number, default: 0 },
-                "height": { type: Number, default: 0 }
-            }
-        },
-        "source": { type: String },
+        // "images": {
+        //     "THUMBNAIL": {
+        //         "url": { type: String },
+        //         "width": { type: Number, default: 0 },
+        //         "height": { type: Number, default: 0 }
+        //     },
+        //     "SMALL": {
+        //         "url": { type: String },
+        //         "width": { type: Number, default: 0 },
+        //         "height": { type: Number, default: 0 }
+        //     },
+        //     "REGULAR": {
+        //         "url": { type: String },
+        //         "width": { type: Number, default: 0 },
+        //         "height": { type: Number, default: 0 }
+        //     },
+        //     "LARGE": {
+        //         "url": { type: String },
+        //         "width": { type: Number, default: 0 },
+        //         "height": { type: Number, default: 0 }
+        //     }
+        // },
+        // "source": { type: String },
         "url": { type: String },
-        "shareAs": { type: String },
-        "yield": { type: Number, default: 0 },
+        // "shareAs": { type: String },
+        // "yield": { type: Number, default: 0 },
         "dietLabels": [
             { type: String }
         ],
@@ -71,8 +71,8 @@ const RecipeSchema = new Schema({
         ],
         "calories": { type: Number, default: 0, required: [true, "Every recipe must have calories"] },
         "glycemicIndex": { type: Number, default: 0 },
-        "totalCO2Emissions": { type: Number, default: 0 },
-        "co2EmissionsClass": { type: String },
+        // "totalCO2Emissions": { type: Number, default: 0 },
+        // "co2EmissionsClass": { type: String },
         "totalWeight": { type: Number, default: 0 },
         "cuisineType": [
             { type: String }
@@ -84,30 +84,30 @@ const RecipeSchema = new Schema({
             { type: String }
         ],
         "totalNutrients": { type: Object },
-        "totalDaily": { type: Object },
-        "digest": [
-            {
-                "label": { type: String },
-                "tag": { type: String },
-                "schemaOrgTag": { type: String },
-                "total": { type: Number, default: 0 },
-                "hasRDI": { type: Boolean, default: true },
-                "daily": { type: Number, default: 0 },
-                "unit": { type: String },
-                "sub": { type: Object }
-            }
-        ]
+        // "totalDaily": { type: Object },
+        // "digest": [
+        //     {
+        //         "label": { type: String },
+        //         "tag": { type: String },
+        //         "schemaOrgTag": { type: String },
+        //         "total": { type: Number, default: 0 },
+        //         "hasRDI": { type: Boolean, default: true },
+        //         "daily": { type: Number, default: 0 },
+        //         "unit": { type: String },
+        //         "sub": { type: Object }
+        //     }
+        // ]
     },
-    "_links": {
-        "self": {
-            "href": { type: String },
-            "title": { type: String }
-        },
-        "next": {
-            "href": { type: String },
-            "title": { type: String }
-        }
-    }
+    // "_links": {
+    //     "self": {
+    //         "href": { type: String },
+    //         "title": { type: String }
+    //     },
+    //     "next": {
+    //         "href": { type: String },
+    //         "title": { type: String }
+    //     }
+    // }
 }
     // ]
     // }
