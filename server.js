@@ -18,17 +18,11 @@ app.get("/", (req, res) => {
 
 //Index
 app.get("/recipes", async (req, res) => {
-    const recipes = await Recipe.find({});
-    return res.send(recipes)
-});
-
-
-// Search
-app.get("/search", async (req, res) => {
-    console.log(req.query)
-    let query = req.query.q;
-    const recipe = await Recipe.find({ label: query });
-    return res.send(recipe)
+    try {
+        res.json(await Recipe.find({}));
+    } catch (error) {
+        res.status(400).json(error);
+    }
 });
 
 
@@ -42,7 +36,7 @@ app.post("/recipes", async (req, res) => {
 });
 
 
-//Update
+// Update
 app.put("/recipes/:id", async (req, res) => {
     try {
         console.log(req.body)
@@ -57,16 +51,30 @@ app.put("/recipes/:id", async (req, res) => {
 app.get("/recipes/:id", async (req, res) => {
     try {
         res.json(
-            await Recipe.findById(req.params._id)
+            await Recipe.findById(req.params.id)
         );
     } catch (error) {
         res.status(400).json(error);
     }
 });
 
+// Delete
+app.delete("/recipes/:id", async (req, res) => {
+    try {
+        res.json(await Recipe.findByIdAndRemove(req.params.id));
+    } catch (error) {
+        res.status(400).json(error);
+    }
+});
 
 
-
+// Search
+app.get("/search", async (req, res) => {
+    console.log(req.query)
+    let query = req.query.q;
+    const recipe = await Recipe.find({ label: query });
+    return res.send(recipe)
+});
 
 
 

@@ -83,7 +83,7 @@ const RecipeSchema = new Schema({
         "dishType": [
             { type: String }
         ],
-        "totalNutrients": { type: Object },
+        // "totalNutrients": { type: Object },
         // "totalDaily": { type: Object },
         // "digest": [
         //     {
