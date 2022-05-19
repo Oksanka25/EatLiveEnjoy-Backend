@@ -51,13 +51,22 @@ const RecipeSchema = new Schema({
             { type: String }
         ],
         "healthLabels": [
-            { type: String, required: [true, "Every recipe must have a health label"] }
+            {
+                type: String,
+                // required: [true, "Every recipe must have a health label"] 
+            }
         ],
         "cautions": [
-            { type: String, required: [true, "Every recipe must have cautions"] }
+            {
+                type: String,
+                // required: [true, "Every recipe must have cautions"] 
+            }
         ],
         "ingredientLines": [
-            { type: String, required: [true, "Every recipe must have ingredients"] }
+            {
+                type: String,
+                // required: [true, "Every recipe must have ingredients"] 
+            }
         ],
         "ingredients": [
             {
@@ -69,7 +78,10 @@ const RecipeSchema = new Schema({
                 "foodId": { type: String }
             }
         ],
-        "calories": { type: Number, default: 0, required: [true, "Every recipe must have calories"] },
+        "calories": {
+            type: Number, default: 0,
+            // required: [true, "Every recipe must have calories"] 
+        },
         "glycemicIndex": { type: Number, default: 0 },
         // "totalCO2Emissions": { type: Number, default: 0 },
         // "co2EmissionsClass": { type: String },

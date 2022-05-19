@@ -29,6 +29,7 @@ app.get("/recipes", async (req, res) => {
 // Create
 app.post("/recipes", async (req, res) => {
     try {
+        console.log(req.body)
         res.json(await Recipe.create(req.body));
     } catch (error) {
         res.status(400).json(error);
@@ -69,12 +70,18 @@ app.delete("/recipes/:id", async (req, res) => {
 
 
 // Search
-app.get("/search", async (req, res) => {
-    console.log(req.query)
-    let query = req.query.q;
-    const recipe = await Recipe.find({ label: query });
-    return res.send(recipe)
-});
+// app.get("/search", async (req, res) => {
+//     console.log(req.query)
+//     let query = req.query.q;
+//     const recipe = await Recipe.find({ label: query });
+//     return res.send(recipe)
+// });
+
+// app.get('/recipes/search', (req, res) => {
+//     Recipe.getAll(req.query).then(products => {
+//         res.status(200).json(products)
+//     }).catch(() => res.status(500).end())
+// })
 
 
 
